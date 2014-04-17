@@ -1,40 +1,40 @@
 ================================================================================
-    MICROSOFT FOUNDATION CLASS LIBRARY : MeshHistogramMFC Project Overview
+    MICROSOFT FOUNDATION CLASS LIBRARY : MeshRetrievalMFC Project Overview
 ===============================================================================
 
-The application wizard has created this MeshHistogramMFC application for
+The application wizard has created this MeshRetrievalMFC application for
 you.  This application not only demonstrates the basics of using the Microsoft
 Foundation Classes but is also a starting point for writing your application.
 
 This file contains a summary of what you will find in each of the files that
-make up your MeshHistogramMFC application.
+make up your MeshRetrievalMFC application.
 
-MeshHistogramMFC.vcproj
+MeshRetrievalMFC.vcproj
     This is the main project file for VC++ projects generated using an application wizard.
     It contains information about the version of Visual C++ that generated the file, and
     information about the platforms, configurations, and project features selected with the
     application wizard.
 
-MeshHistogramMFC.h
+MeshRetrievalMFC.h
     This is the main header file for the application.  It includes other
     project specific headers (including Resource.h) and declares the
-    CMeshHistogramMFCApp application class.
+    CMeshRetrievalMFCApp application class.
 
-MeshHistogramMFC.cpp
+MeshRetrievalMFC.cpp
     This is the main application source file that contains the application
-    class CMeshHistogramMFCApp.
+    class CMeshRetrievalMFCApp.
 
-MeshHistogramMFC.rc
+MeshRetrievalMFC.rc
     This is a listing of all of the Microsoft Windows resources that the
     program uses.  It includes the icons, bitmaps, and cursors that are stored
     in the RES subdirectory.  This file can be directly edited in Microsoft
     Visual C++. Your project resources are in 1033.
 
-res\MeshHistogramMFC.ico
+res\MeshRetrievalMFC.ico
     This is an icon file, which is used as the application's icon.  This
-    icon is included by the main resource file MeshHistogramMFC.rc.
+    icon is included by the main resource file MeshRetrievalMFC.rc.
 
-res\MeshHistogramMFC.rc2
+res\MeshRetrievalMFC.rc2
     This file contains resources that are not edited by Microsoft
     Visual C++. You should place all resources not editable by
     the resource editor in this file.
@@ -44,10 +44,10 @@ res\MeshHistogramMFC.rc2
 
 The application wizard creates one dialog class:
 
-MeshHistogramMFCDlg.h, MeshHistogramMFCDlg.cpp - the dialog
-    These files contain your CMeshHistogramMFCDlg class.  This class defines
+MeshRetrievalMFCDlg.h, MeshRetrievalMFCDlg.cpp - the dialog
+    These files contain your CMeshRetrievalMFCDlg class.  This class defines
     the behavior of your application's main dialog.  The dialog's template is
-    in MeshHistogramMFC.rc, which can be edited in Microsoft Visual C++.
+    in MeshRetrievalMFC.rc, which can be edited in Microsoft Visual C++.
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -63,13 +63,13 @@ Other standard files:
 
 StdAfx.h, StdAfx.cpp
     These files are used to build a precompiled header (PCH) file
-    named MeshHistogramMFC.pch and a precompiled types file named StdAfx.obj.
+    named MeshRetrievalMFC.pch and a precompiled types file named StdAfx.obj.
 
 Resource.h
     This is the standard header file, which defines new resource IDs.
     Microsoft Visual C++ reads and updates this file.
 
-MeshHistogramMFC.manifest
+MeshRetrievalMFC.manifest
 	Application manifest files are used by Windows XP to describe an applications
 	dependency on specific versions of Side-by-Side assemblies. The loader uses this
 	information to load the appropriate assembly from the assembly cache or private

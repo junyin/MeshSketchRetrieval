@@ -21,13 +21,16 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MeshRetrievalMFC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshRetrievalMFCDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Toolbox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="MeshOperation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MeshHistogramMFC.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MeshHistogramMFCDlg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -47,16 +50,19 @@
     <ClInclude Include="MeshOperation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MeshHistogramMFC.h">
+    <ClInclude Include="MeshRetrievalMFC.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MeshHistogramMFCDlg.h">
+    <ClInclude Include="MeshRetrievalMFCDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Toolbox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\ANN.dll" />
-    <None Include="res\MeshHistogramMFC.rc2">
+    <None Include="res\MeshRetrievalMFC.rc2">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
@@ -64,12 +70,12 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="res\MeshHistogramMFC.ico">
+    <Image Include="res\MeshRetrievalMFC.ico">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="MeshHistogramMFC.rc">
+    <ResourceCompile Include="MeshRetrievalMFC.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>

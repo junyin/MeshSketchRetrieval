@@ -52,7 +52,7 @@ BEGIN
     "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
     "LANGUAGE 9, 1\r\n"
     "#pragma code_page(1252)\r\n"
-    "#include ""res\\MeshHistogramMFC.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""res\\MeshRetrievalMFC.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
     "#include ""afxres.rc""     // Standard components\r\n"
     "#endif\r\n"
     "\0"
@@ -68,7 +68,7 @@ END
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-IDR_MAINFRAME           ICON                    "res\\MeshHistogramMFC.ico"
+IDR_MAINFRAME           ICON                    "res\\MeshRetrievalMFC.ico"
 #endif    // Korean (Korea) resources
 /////////////////////////////////////////////////////////////////////////////
 
@@ -87,32 +87,36 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 
 IDD_ABOUTBOX DIALOGEX 0, 0, 170, 62
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "About MeshHistogramMFC"
+CAPTION "About MeshRetrievalMFC"
 FONT 8, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
     ICON            IDR_MAINFRAME,IDC_STATIC,14,14,21,20
-    LTEXT           "MeshHistogramMFC, Version 1.0",IDC_STATIC,42,14,114,8,SS_NOPREFIX
+    LTEXT           "MeshRetrievalMFC, Version 1.0",IDC_STATIC,42,14,114,8,SS_NOPREFIX
     LTEXT           "Copyright (C) 2012",IDC_STATIC,42,26,114,8
     DEFPUSHBUTTON   "OK",IDOK,113,41,50,14,WS_GROUP
 END
 
-IDD_MeshHistogramMFC_DIALOG DIALOGEX 0, 0, 551, 354
+IDD_MeshRetrievalMFC_DIALOG DIALOGEX 0, 0, 551, 354
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_APPWINDOW
-CAPTION "MeshHistogram"
+CAPTION "MeshRetrieval"
 FONT 8, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
-    CONTROL         "",IDC_PIC_OPENGL,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,24,17,503,273
+    CONTROL         "",IDC_PIC_OPENGL,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,24,17,503,272
     PUSHBUTTON      "LoadMesh",Load,30,297,57,14
-    LTEXT           "Left mouse button: Rotate      Mid mouse button: Zoom in/out Right mouse button: Translate",IDC_STATIC,445,319,99,28
+    LTEXT           "Left mouse button: Rotate      Mid mouse button: Zoom in/out Right mouse button: Translate",IDC_STATIC,442,305,99,28
     PUSHBUTTON      "AddNoise",Noise,29,322,57,14
     PUSHBUTTON      "Normalize",Normalize,103,321,60,14
-    PUSHBUTTON      "MeshHistogram",MeshHistogram,181,297,60,14
-    PUSHBUTTON      "VRMLExport",VRMLExport,179,321,59,14,BS_CENTER | NOT WS_VISIBLE
-    PUSHBUTTON      "RemoveDV",RemoveDV,104,297,58,14
-    PUSHBUTTON      "Sketch",Sketch,261,298,50,14
-    PUSHBUTTON      "Rotation",Rotation,261,322,50,14
-    PUSHBUTTON      "Retrieval",Retrieval,333,298,50,14
+    PUSHBUTTON      "Sketch",Sketch,104,298,59,14
+    PUSHBUTTON      "RetrievalSeat",RetrievalSeat,178,321,54,14
+    PUSHBUTTON      "RetrievalBack",RetrievalBack,177,298,53,14
+    CONTROL         "Candidate1",CANDIDATE1,"Button",BS_AUTORADIOBUTTON,261,310,53,10
+    CONTROL         "Candidate2",CANDIDATE2,"Button",BS_AUTORADIOBUTTON,261,322,53,10
+    CONTROL         "Candidate3",CANDIDATE3,"Button",BS_AUTORADIOBUTTON,314,310,53,10
+    CONTROL         "Candidate4",CANDIDATE4,"Button",BS_AUTORADIOBUTTON,314,322,53,10
+    CONTROL         "Candidate5",CANDIDATE5,"Button",BS_AUTORADIOBUTTON,367,310,53,10
+    CONTROL         "Candidate6",CANDIDATE6,"Button",BS_AUTORADIOBUTTON,367,322,53,10
+    GROUPBOX        "Candidate",IDC_STATIC,250,296,173,41
 END
 
 
@@ -141,9 +145,9 @@ BEGIN
             VALUE "CompanyName", "TODO: <Company name>"
             VALUE "FileDescription", "TODO: <File description>"
             VALUE "FileVersion", "1.0.0.1"
-            VALUE "InternalName", "MeshHistogramMFC.exe"
+            VALUE "InternalName", "MeshRetrievalMFC.exe"
             VALUE "LegalCopyright", "TODO: (c) <Company name>.  All rights reserved."
-            VALUE "OriginalFilename", "MeshHistogramMFC.exe"
+            VALUE "OriginalFilename", "MeshRetrievalMFC.exe"
             VALUE "ProductName", "TODO: <Product name>"
             VALUE "ProductVersion", "1.0.0.1"
         END
@@ -171,13 +175,16 @@ BEGIN
         BOTTOMMARGIN, 55
     END
 
-    IDD_MeshHistogramMFC_DIALOG, DIALOG
+    IDD_MeshRetrievalMFC_DIALOG, DIALOG
     BEGIN
         LEFTMARGIN, 7
         RIGHTMARGIN, 544
-        VERTGUIDE, 389
+        VERTGUIDE, 24
+        VERTGUIDE, 527
         TOPMARGIN, 7
         BOTTOMMARGIN, 347
+        HORZGUIDE, 17
+        HORZGUIDE, 289
     END
 END
 #endif    // APSTUDIO_INVOKED
@@ -190,7 +197,7 @@ END
 
 STRINGTABLE
 BEGIN
-    IDS_ABOUTBOX            "&About MeshHistogramMFC..."
+    IDS_ABOUTBOX            "&About MeshRetrievalMFC..."
 END
 
 #endif    // English (United States) resources
@@ -211,7 +218,7 @@ END
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
 LANGUAGE 9, 1
 #pragma code_page(1252)
-#include "res\MeshHistogramMFC.rc2"  // non-Microsoft Visual C++ edited resources
+#include "res\MeshRetrievalMFC.rc2"  // non-Microsoft Visual C++ edited resources
 #include "afxres.rc"     // Standard components
 #endif
 

@@ -1,9 +1,9 @@
-// MeshHistogramMFCDlg.cpp : implementation file
+// MeshRetrievalMFCDlg.cpp : implementation file
 //
 
 #include "stdafx.h"
-#include "MeshHistogramMFC.h"
-#include "MeshHistogramMFCDlg.h"
+#include "MeshRetrievalMFC.h"
+#include "MeshRetrievalMFCDlg.h"
 
 
 
@@ -11,6 +11,7 @@
 #define new DEBUG_NEW
 #endif
 
+int base = 0;
 
 // CAboutDlg dialog used for App About
 char fileName[256]={0};
@@ -44,39 +45,42 @@ BEGIN_MESSAGE_MAP(CAboutDlg, CDialog)
 END_MESSAGE_MAP()
 
 
-// CMeshHistogramMFCDlg dialog
-CMeshHistogramMFCDlg::CMeshHistogramMFCDlg(CWnd* pParent /*=NULL*/)
-	: CDialog(CMeshHistogramMFCDlg::IDD, pParent)
+// CMeshRetrievalMFCDlg dialog
+CMeshRetrievalMFCDlg::CMeshRetrievalMFCDlg(CWnd* pParent /*=NULL*/)
+	: CDialog(CMeshRetrievalMFCDlg::IDD, pParent)
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
 
-void CMeshHistogramMFCDlg::DoDataExchange(CDataExchange* pDX)
+void CMeshRetrievalMFCDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialog::DoDataExchange(pDX);
 }
 
-BEGIN_MESSAGE_MAP(CMeshHistogramMFCDlg, CDialog)
+BEGIN_MESSAGE_MAP(CMeshRetrievalMFCDlg, CDialog)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 	//}}AFX_MSG_MAP
 	ON_WM_SIZE()
 	ON_WM_TIMER()
-	ON_BN_CLICKED(Load, &CMeshHistogramMFCDlg::OnBnClickedLoad)
-	ON_BN_CLICKED(Noise, &CMeshHistogramMFCDlg::OnBnClickedNoise)
-	ON_BN_CLICKED(Normalize, &CMeshHistogramMFCDlg::OnBnClickedNormalize)
-	ON_BN_CLICKED(MeshHistogram, &CMeshHistogramMFCDlg::OnBnClickedMeshhistogram)
-	ON_BN_CLICKED(VRMLExport, &CMeshHistogramMFCDlg::OnBnClickedVrmlexport)
-	ON_BN_CLICKED(RemoveDV, &CMeshHistogramMFCDlg::OnBnClickedRemovedv)
-	ON_BN_CLICKED(Sketch, &CMeshHistogramMFCDlg::OnBnClickedSketch)
-	ON_BN_CLICKED(Rotation, &CMeshHistogramMFCDlg::OnBnClickedRotation)
-	ON_BN_CLICKED(Retrieval, &CMeshHistogramMFCDlg::OnBnClickedRetrieval)
+	ON_BN_CLICKED(Load, &CMeshRetrievalMFCDlg::OnBnClickedLoad)
+	ON_BN_CLICKED(Noise, &CMeshRetrievalMFCDlg::OnBnClickedNoise)
+	ON_BN_CLICKED(Normalize, &CMeshRetrievalMFCDlg::OnBnClickedNormalize)
+	ON_BN_CLICKED(Sketch, &CMeshRetrievalMFCDlg::OnBnClickedSketch)
+	ON_BN_CLICKED(CANDIDATE1, &CMeshRetrievalMFCDlg::OnBnClickedCandidate1)
+	ON_BN_CLICKED(CANDIDATE2, &CMeshRetrievalMFCDlg::OnBnClickedCandidate2)
+	ON_BN_CLICKED(CANDIDATE3, &CMeshRetrievalMFCDlg::OnBnClickedCandidate3)
+	ON_BN_CLICKED(CANDIDATE4, &CMeshRetrievalMFCDlg::OnBnClickedCandidate4)
+	ON_BN_CLICKED(CANDIDATE5, &CMeshRetrievalMFCDlg::OnBnClickedCandidate5)
+	ON_BN_CLICKED(CANDIDATE6, &CMeshRetrievalMFCDlg::OnBnClickedCandidate6)
+	ON_BN_CLICKED(RetrievalBack, &CMeshRetrievalMFCDlg::OnBnClickedRetrievalback)
+	ON_BN_CLICKED(RetrievalSeat, &CMeshRetrievalMFCDlg::OnBnClickedRetrievalseat)
 END_MESSAGE_MAP()
 
 
-// CMeshHistogramMFCDlg message handlers
-BOOL CMeshHistogramMFCDlg::OnInitDialog()
+// CMeshRetrievalMFCDlg message handlers
+BOOL CMeshRetrievalMFCDlg::OnInitDialog()
 {
 	CDialog::OnInitDialog();
 
@@ -126,7 +130,7 @@ BOOL CMeshHistogramMFCDlg::OnInitDialog()
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
 
-void CMeshHistogramMFCDlg::OnSysCommand(UINT nID, LPARAM lParam)
+void CMeshRetrievalMFCDlg::OnSysCommand(UINT nID, LPARAM lParam)
 {
 	if ((nID & 0xFFF0) == IDM_ABOUTBOX)
 	{
@@ -143,8 +147,10 @@ void CMeshHistogramMFCDlg::OnSysCommand(UINT nID, LPARAM lParam)
 //  to draw the icon.  For MFC applications using the document/view model,
 //  this is automatically done for you by the framework.
 
-void CMeshHistogramMFCDlg::OnPaint()
+void CMeshRetrievalMFCDlg::OnPaint()
 {
+
+
 	if (IsIconic())
 	{
 		CPaintDC dc(this); // device context for painting
@@ -170,13 +176,13 @@ void CMeshHistogramMFCDlg::OnPaint()
 
 // The system calls this function to obtain the cursor to display while the user drags
 //  the minimized window.
-HCURSOR CMeshHistogramMFCDlg::OnQueryDragIcon()
+HCURSOR CMeshRetrievalMFCDlg::OnQueryDragIcon()
 {
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
 
-void CMeshHistogramMFCDlg::OnSize(UINT nType, int cx, int cy)
+void CMeshRetrievalMFCDlg::OnSize(UINT nType, int cx, int cy)
 {
 	CDialog::OnSize(nType, cx, cy);
 
@@ -207,7 +213,7 @@ void CMeshHistogramMFCDlg::OnSize(UINT nType, int cx, int cy)
 
 }
 
-void CMeshHistogramMFCDlg::OnTimer(UINT_PTR nIDEvent)
+void CMeshRetrievalMFCDlg::OnTimer(UINT_PTR nIDEvent)
 {
 	// TODO: Add your message handler code here and/or call default
 	CDialog::OnTimer(nIDEvent);
@@ -215,7 +221,7 @@ void CMeshHistogramMFCDlg::OnTimer(UINT_PTR nIDEvent)
 
 
 
-void CMeshHistogramMFCDlg::OnBnClickedLoad()
+void CMeshRetrievalMFCDlg::OnBnClickedLoad()
 {
 	CFileDialog dlg(true,NULL,NULL,OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT,
 		"all files(*.*)|*.*|model files(*.ply)|*.ply", NULL);
@@ -239,57 +245,64 @@ void CMeshHistogramMFCDlg::OnBnClickedLoad()
 	}
 	meshQueue.reserve(10);
 	meshQueue.push_back(mesh);
-	PLOT_CONTROL=1;
+	//PLOT_CONTROL=1;
 }
 
-
-void CMeshHistogramMFCDlg::OnBnClickedNoise()
+void CMeshRetrievalMFCDlg::OnBnClickedNoise()
 {
 	NOISE_CONTROL = true;
 }
 
-void CMeshHistogramMFCDlg::OnBnClickedRemovedv()
-{
-	REMOVE_CONTROL=true;
-}
-
-void CMeshHistogramMFCDlg::OnBnClickedNormalize()
+void CMeshRetrievalMFCDlg::OnBnClickedNormalize()
 {
 	NORMALIZE_CONTROL = true;
 }
 
-void CMeshHistogramMFCDlg::OnBnClickedMeshhistogram()
-{
-	HISTOGRAM_CONTROL = true;
-	PLOT_CONTROL+=1;
-}
-
-
-void CMeshHistogramMFCDlg::OnBnClickedVrmlexport()
-{
-	unsigned int meshsize = meshQueue.size();
-	VRML2Writer(meshQueue.at(meshsize-1),fileName);
-}
-
-
-void CMeshHistogramMFCDlg::OnBnClickedSketch()
+void CMeshRetrievalMFCDlg::OnBnClickedSketch()
 {
 	SKETCH_CONTROL =! SKETCH_CONTROL;
-	//if(SKETCH_CONTROL % 2==0)
-	//{
-	//	sketchpoint.erase(sketchpoint.begin(),sketchpoint.end());
-	//	//sketchpoint_y.erase(sketchpoint_y.begin(),sketchpoint_y.end());
-	//}
 }
 
-
-void CMeshHistogramMFCDlg::OnBnClickedRotation()
+void CMeshRetrievalMFCDlg::OnBnClickedRetrievalback()
 {
-	// TODO: Add your control notification handler code here
+	RETRIEVAL_CONTROL = 1;
+	base = 0;
+	SKETCH_CONTROL =! SKETCH_CONTROL;
 }
 
-
-void CMeshHistogramMFCDlg::OnBnClickedRetrieval()
+void CMeshRetrievalMFCDlg::OnBnClickedRetrievalseat()
 {
-	RETRIEVAL_CONTROL =true;
+	RETRIEVAL_CONTROL = 2;
+	base = 10;
+	SKETCH_CONTROL =! SKETCH_CONTROL;
+}
+
+void CMeshRetrievalMFCDlg::OnBnClickedCandidate1()
+{
+	ChooseCandidate(candidate_index_array,base+0);
+}
+
+void CMeshRetrievalMFCDlg::OnBnClickedCandidate2()
+{
+	ChooseCandidate(candidate_index_array,base+1);
+}
+
+void CMeshRetrievalMFCDlg::OnBnClickedCandidate3()
+{
+	ChooseCandidate(candidate_index_array,base+2);
+}
+
+void CMeshRetrievalMFCDlg::OnBnClickedCandidate4()
+{
+	ChooseCandidate(candidate_index_array,base+3);
+}
+
+void CMeshRetrievalMFCDlg::OnBnClickedCandidate5()
+{
+	ChooseCandidate(candidate_index_array,base+4);
+}
+
+void CMeshRetrievalMFCDlg::OnBnClickedCandidate6()
+{
+	ChooseCandidate(candidate_index_array,base+5);
 }

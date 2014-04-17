@@ -1,39 +1,39 @@
 
-// CMeshHistogramMFC.cpp : Defines the class behaviors for the application.
+// CMeshRetrievalMFC.cpp : Defines the class behaviors for the application.
 //
 
 #include "stdafx.h"
-#include "MeshHistogramMFC.h"
-#include "MeshHistogramMFCDlg.h"
+#include "MeshRetrievalMFC.h"
+#include "MeshRetrievalMFCDlg.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
 
 
-// CMeshHistogramMFCApp
+// CMeshRetrievalMFCApp
 
-BEGIN_MESSAGE_MAP(CMeshHistogramMFCApp, CWinAppEx)
+BEGIN_MESSAGE_MAP(CMeshRetrievalMFCApp, CWinAppEx)
 	ON_COMMAND(ID_HELP, CWinAppEx::OnContextHelp)
 END_MESSAGE_MAP()
 
-// CMeshHistogramMFCApp construction
+// CMeshRetrievalMFCApp construction
 
-CMeshHistogramMFCApp::CMeshHistogramMFCApp()
+CMeshRetrievalMFCApp::CMeshRetrievalMFCApp()
 {
 
 	// Place all significant initialization in InitInstance
 }
 
 
-// The one and only CMeshHistogramMFCApp object
+// The one and only CMeshRetrievalMFCApp object
 
-CMeshHistogramMFCApp theApp;
+CMeshRetrievalMFCApp theApp;
 
 
-// CMeshHistogramMFCApp initialization
+// CMeshRetrievalMFCApp initialization
 
-BOOL CMeshHistogramMFCApp::InitInstance()
+BOOL CMeshRetrievalMFCApp::InitInstance()
 {
 	// InitCommonControlsEx() is required on Windows XP if an application
 	// manifest specifies use of ComCtl32.dll version 6 or later to enable
@@ -52,7 +52,7 @@ BOOL CMeshHistogramMFCApp::InitInstance()
 	// Standard initialization
 	SetRegistryKey(_T("Local AppWizard-Generated Applications"));
 
-	CMeshHistogramMFCDlg dlg;
+	CMeshRetrievalMFCDlg dlg;
 	m_pMainWnd = &dlg;
 	INT_PTR nResponse = dlg.DoModal();
 	if (nResponse == IDOK)

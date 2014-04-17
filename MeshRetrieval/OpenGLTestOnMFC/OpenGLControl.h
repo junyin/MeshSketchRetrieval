@@ -16,18 +16,9 @@ typedef OpenMesh::PolyMesh_ArrayKernelT<>  MyMesh;
 
 extern  vector<MyMesh> meshQueue;
 extern bool NOISE_CONTROL;
-extern bool REMOVE_CONTROL;
 extern bool NORMALIZE_CONTROL;
-extern bool HISTOGRAM_CONTROL;
 extern bool SKETCH_CONTROL;
-extern int PLOT_CONTROL;
-extern bool PROJECTION_CONTROL;
-extern bool RETRIEVAL_CONTROL;
-
-extern vector<double> sketchpoint_x;
-extern vector<double> sketchpoint_y;
-extern vector<double> sketchpoint_z;
-//extern vector<float> sketchpoint_y;
+extern int RETRIEVAL_CONTROL;
 
 class COpenGLControl : public CWnd
 {
@@ -76,4 +67,5 @@ public:
 	afx_msg void OnMouseMove(UINT nFlags, CPoint point);
 
 	DECLARE_MESSAGE_MAP()
+
 };
