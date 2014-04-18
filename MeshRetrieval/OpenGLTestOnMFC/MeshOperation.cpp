@@ -2,6 +2,7 @@
 #include "MeshOperation.h"
 
 #include <math.h>
+#include <cmath>
 #include <stdio.h>
 #include <random>
 
@@ -135,6 +136,92 @@ void MeshSketchRetrieval(vector<double> &sketchpoint_x,vector<double> &sketchpoi
 	}
 
 	/*Calculate similarity with database*/
+	/*base section*/
+	//similarity_halfcircle = sum(hist_test.*hist)/(norm(hist_test)*norm(hist))
+	//double similarity_vector[DATASIZE] = {};
+	//for (int i = 0; i < DATASIZE; i++)
+	//{ 
+	//	double historgram_object[143]={};
+	//	//number to string
+	//	string num = static_cast<ostringstream*>( &(ostringstream() << (i)) )->str();
+	//	string filname;
+	//	if(RETRIEVAL_CONTROL==1)
+	//		filname = "./MeshHistData/back_"+num+"_hist_front.txt";
+	//	if(RETRIEVAL_CONTROL==2)
+	//		filname = "./MeshHistData/seat"+num+"_hist_top.txt";
+	//	loadHistogram (filname,historgram_object);
+
+	//	double similarity_tem  = similarity(historgram_object,histogram_sketch);
+	//	similarity_vector[i] = similarity_tem;
+	//}
+
+	/*Calculate similarity with database*/
+	/*advance method 1*/
+	//double similarity_vector[DATASIZE] = {};
+	//for (int i = 0; i < DATASIZE; i++)
+	//{ 
+	//	double historgram_object[143]={};
+	//	//number to string
+	//	string num = static_cast<ostringstream*>( &(ostringstream() << (i)) )->str();
+	//	string filname,filname_front,filname_up15,filname_down15,filname_side15,filname_up30,filname_down30,filname_side30,filname_side45;
+	//	if(RETRIEVAL_CONTROL==1)
+	//	{
+	//		filname_front = "./MeshHistData/back_"+num+"_hist_front.txt"; //hist_front/up30/down30/side30/side45
+	//		loadHistogram (filname_front,historgram_object);
+	//		double similarity_tem_front  = similarity(historgram_object,histogram_sketch);
+
+	//		filname_up15 = "./MeshHistData/back_"+num+"_hist_up15.txt"; 
+	//		loadHistogram (filname_up15,historgram_object);
+	//		double similarity_tem_up15  = similarity(historgram_object,histogram_sketch);
+
+	//		filname_down15 = "./MeshHistData/back_"+num+"_hist_down15.txt";
+	//		loadHistogram (filname_down15,historgram_object);
+	//		double similarity_tem_down15  = similarity(historgram_object,histogram_sketch);
+
+	//		filname_side15 = "./MeshHistData/back_"+num+"_hist_side15.txt";
+	//		loadHistogram (filname_side15,historgram_object);
+	//		double similarity_tem_side15  = similarity(historgram_object,histogram_sketch);
+
+	//		filname_up30 = "./MeshHistData/back_"+num+"_hist_up30.txt"; 
+	//		loadHistogram (filname_up30,historgram_object);
+	//		double similarity_tem_up30  = similarity(historgram_object,histogram_sketch);
+
+	//		filname_down30 = "./MeshHistData/back_"+num+"_hist_down30.txt";
+	//		loadHistogram (filname_down30,historgram_object);
+	//		double similarity_tem_down30  = similarity(historgram_object,histogram_sketch);
+
+	//		filname_side30 = "./MeshHistData/back_"+num+"_hist_side30.txt";
+	//		loadHistogram (filname_side30,historgram_object);
+	//		double similarity_tem_side30  = similarity(historgram_object,histogram_sketch);
+
+	//		filname_side45 = "./MeshHistData/back_"+num+"_hist_side45.txt";
+	//		loadHistogram (filname_side45,historgram_object);
+	//		double similarity_tem_side45  = similarity(historgram_object,histogram_sketch);
+
+	//		similarity_vector[i] = (similarity_tem_front*abs(cos(theta_y))+similarity_tem_front*abs(cos(theta_x))
+	//			+similarity_tem_up15*abs(cos(15*2*M_PI/360.0-theta_x))+similarity_tem_down15*abs(cos(15*2*M_PI/360.0-theta_x))
+	//			+similarity_tem_side15*abs(cos(15*2*M_PI/360.0-theta_y))+similarity_tem_side15*abs(cos(15*2*M_PI/360.0-theta_y))
+	//			+similarity_tem_up30*abs(cos(30*2*M_PI/360.0-theta_x))+similarity_tem_down30*abs(cos(30*2*M_PI/360.0-theta_x))
+	//			+similarity_tem_side30*abs(cos(30*2*M_PI/360.0-theta_y))+similarity_tem_side30*abs(cos(30*2*M_PI/360.0)-theta_y)
+	//			+similarity_tem_side45*abs(cos(45*2*M_PI/360.0-theta_y))+similarity_tem_side45*abs(cos(45*2*M_PI/360.0)-theta_y))
+	//			/(abs(cos(theta_y))+abs(cos(theta_x))
+	//			+abs(cos(15*2*M_PI/360.0-theta_x))+abs(cos(15*2*M_PI/360.0-theta_x))+abs(cos(15*2*M_PI/360.0-theta_y))+abs(cos(15*2*M_PI/360.0-theta_y))
+	//			+abs(cos(30*2*M_PI/360.0-theta_x))+abs(cos(30*2*M_PI/360.0-theta_x))+abs(cos(30*2*M_PI/360.0-theta_y))+abs(cos(30*2*M_PI/360.0-theta_y))
+	//			+abs(cos(45*2*M_PI/360.0-theta_y))+abs(cos(45*2*M_PI/360.0-theta_y)));
+	//	}
+	//	if(RETRIEVAL_CONTROL==2)
+	//	{
+	//		filname = "./MeshHistData/seat"+num+"_hist_top.txt";
+	//		loadHistogram (filname,historgram_object);
+	//		double similarity_tem  = similarity(historgram_object,histogram_sketch);
+	//		similarity_vector[i] = similarity_tem;
+	//	}
+	//}
+
+
+
+	/*Calculate similarity with database*/
+	/*advance method 2*/
 	//similarity_halfcircle = sum(hist_test.*hist)/(norm(hist_test)*norm(hist))
 	double similarity_vector[DATASIZE] = {};
 	for (int i = 0; i < DATASIZE; i++)
@@ -142,16 +229,43 @@ void MeshSketchRetrieval(vector<double> &sketchpoint_x,vector<double> &sketchpoi
 		double historgram_object[143]={};
 		//number to string
 		string num = static_cast<ostringstream*>( &(ostringstream() << (i)) )->str();
-		string filname;
+		string filname,filname_front,filname_up15,filname_down15,filname_side15,filname_side30;
 		if(RETRIEVAL_CONTROL==1)
-			filname = "./MeshHistData/back_"+num+"_hist_front.txt";
-		if(RETRIEVAL_CONTROL==2)
-			filname = "./MeshHistData/seat"+num+"_hist_top.txt";
-		loadHistogram (filname,historgram_object);
+		{
+			filname_front = "./MeshHistData/back_"+num+"_hist_front.txt"; 
+			loadHistogram (filname_front,historgram_object);
+			double similarity_tem_front  = similarity(historgram_object,histogram_sketch);
 
-		double similarity_tem  = similarity(historgram_object,histogram_sketch);
-		similarity_vector[i] = similarity_tem;
+			filname_up15 = "./MeshHistData/back_"+num+"_hist_up15.txt"; 
+			loadHistogram (filname_up15,historgram_object);
+			double similarity_tem_up15  = similarity(historgram_object,histogram_sketch);
+
+			filname_down15 = "./MeshHistData/back_"+num+"_hist_down15.txt";
+			loadHistogram (filname_down15,historgram_object);
+			double similarity_tem_down15  = similarity(historgram_object,histogram_sketch);
+
+			filname_side15 = "./MeshHistData/back_"+num+"_hist_side15.txt";
+			loadHistogram (filname_side15,historgram_object);
+			double similarity_tem_side15  = similarity(historgram_object,histogram_sketch);
+
+			filname_side30 = "./MeshHistData/back_"+num+"_hist_side30.txt";
+			loadHistogram (filname_side30,historgram_object);
+			double similarity_tem_side30  = similarity(historgram_object,histogram_sketch);
+
+			similarity_vector[i] = (similarity_tem_front+similarity_tem_up15*cos(15*2*M_PI/360.0)+similarity_tem_down15*cos(15*2*M_PI/360.0)
+				+similarity_tem_side15*cos(15*2*M_PI/360.0)+similarity_tem_side30*cos(30*2*M_PI/360.0)
+				+similarity_tem_side15*cos(15*2*M_PI/360.0)+similarity_tem_side30*cos(30*2*M_PI/360.0))
+				/(1+cos(15*2*M_PI/360.0)+cos(15*2*M_PI/360.0)+cos(15*2*M_PI/360.0)+cos(30*2*M_PI/360.0)+cos(15*2*M_PI/360.0)+cos(30*2*M_PI/360.0));
+		}
+		if(RETRIEVAL_CONTROL==2)
+		{
+			filname = "./MeshHistData/seat"+num+"_hist_top.txt";
+			loadHistogram (filname,historgram_object);
+			double similarity_tem  = similarity(historgram_object,histogram_sketch);
+			similarity_vector[i] = similarity_tem;
+		}
 	}
+
 
 	//initial candidate_index_array[DATASIZE] form 0 to (DATASIZE-1)
 	for (int i = 0; i < DATASIZE; i++)

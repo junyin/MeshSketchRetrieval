@@ -19,6 +19,7 @@ extern bool NOISE_CONTROL;
 extern bool NORMALIZE_CONTROL;
 extern bool SKETCH_CONTROL;
 extern int RETRIEVAL_CONTROL;
+extern double theta_x, theta_y;
 
 class COpenGLControl : public CWnd
 {

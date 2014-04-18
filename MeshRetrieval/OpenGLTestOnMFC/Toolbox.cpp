@@ -16,6 +16,7 @@ void loadHistogram(string filname,double *histogram)
 		{
 			*(histogram+count) = atof(line.c_str());
 			count++;
+			if(count==144) break;
 		}
 		myfile.close();
 	}

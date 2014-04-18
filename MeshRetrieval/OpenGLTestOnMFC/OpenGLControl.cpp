@@ -40,6 +40,9 @@ GLdouble projection[16];
 GLfloat  winX, winY, winZ; 
 GLdouble posX, posY, posZ;
 
+double theta_x = 0.0;
+double theta_y = 0.0;
+
 COpenGLControl::COpenGLControl(void)
 {
 	m_fPosX = 0.0f;						 // X position of model in camera view
@@ -363,8 +366,10 @@ void COpenGLControl::oglDrawScene(void)
 	//rotate the mesh and get corresponding 2D projection
 	if(SKETCH_CONTROL && meshsize>0)
 	{
-		double theta_x = -m_fRotX*2*M_PI/360.0;
-		double theta_y = m_fRotY*2*M_PI/360.0;
+		theta_x = -m_fRotX*2*M_PI/360.0;
+		theta_y = m_fRotY*2*M_PI/360.0;
+		/*double theta_x = -m_fRotX*2*M_PI/360.0;
+		double theta_y = m_fRotY*2*M_PI/360.0;*/
 		for (int i=0;i<meshsize;i++)
 		{
 			for(MyMesh::VertexIter v_it = projectedQueue.at(i).vertices_begin();v_it!=projectedQueue.at(i).vertices_end();++v_it)
